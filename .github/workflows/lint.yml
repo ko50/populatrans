@@ -15,9 +15,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
+          cache: "pnpm"
 
-      - name: Install packages
-        run: pnpm install
-
-      - name: Run ESLint
-        run: pnpm lint
+      - run: pnpm install
+      - run: pnpm lint
