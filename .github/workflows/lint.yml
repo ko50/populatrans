@@ -9,13 +9,15 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/chackout@v3
+      - uses: actions/chackout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: 16.x
           cache: "pnpm"
 
-      - run: pnpm install
-      - run: pnpm lint
+      - name: Install packages
+        run: pnpm install
+      - name: Run lint
+        run: pnpm lint
