@@ -1,4 +1,4 @@
 export type Population = {
-  year: number;
-  value: number;
+    year: number;
+    value: number;
 };
