@@ -1,0 +1,14 @@
+@use "styles/utils/colors.scss";
+@use "styles/utils/fonts.scss";
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  padding: 1rem;
+  align-items: center;
+  font-size: 3.5rem;
+  font-family: fonts.$zcool;
+  color: white;
+  background-color: colors.$sakura;
+}
