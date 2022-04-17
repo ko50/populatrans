@@ -1,34 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 1. **環境構築**
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+```
+git clone https://ko50/populatrans
+cd populatrans
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 1.1. **パッケージを入れる**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+パッケージ管理には `pnpm` を使用しています
+( [pnpm をインストール](https://pnpm.io/installation) )
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+pnpm install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 1.2. **環境変数を設定する**
 
-## Learn More
+1. `.env.sample` をコピーして、 `.env` にリネームする
+1. サンプルと ↓ を参考に環境変数を設定する
 
-To learn more about Next.js, take a look at the following resources:
+### 環境変数
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **`API_CONFIG`: `"mock" | "resas"`**
+  - 使用する API を選択する
+- **`RESAS_API_KEY`: `string`**
+  - RESAS API を使用する際の API キー
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 1.3. **サーバー起動**
 
-## Deploy on Vercel
+```
+pnpm dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# 2. **開発スタイル**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 2.1. **Git の使用**
+
+- コミット
+  - コミットメッセージは `prefix: detail` の形式
+    - `prefix` は `feat` や `fix` など
+    - `detail` は簡単な説明
+- ブランチ
+  - ブランチ名は `prefix/category/detail` の形式
+    - `prefix` は `feat` や `fix` 、 `ci` など
+    - `category` は `components` や `pages` など変更の大きな分類
+    - `detail` は簡単な説明
+  - 基本的に kebab-case (ハイフンで区切る) を使用
+
+## 2.2 **GitHub の使用**
+
+- 使用の流れ
+
+  1. issue を作成する (Assignee、ラベルは最低限設定する)
+  1. ブランチを切る
+  1. Pull Request を作成する (設定内容は Assignee とラベルのみでよい)
+  1. issue と紐付ける
+  1. CI・レビューが通り次第 PR の作成者がマージする
+  1. Conversation は原則作成者が Resolve する
+
+---
+
+- issue 名はコミットメッセージと同じ形式
+- Pull Request 名も同様
+- ローカルで開発する時はフォーマッタをかけること
+  - Prettier を使用
+  - VSCode などは保存時フォーマットを有効化するといいと思います
+- マージの形式は `squash merge`
+
+## 2.3. **ディレクトリ構成**
+
+```c
+├── .env            // Set environment variables
+├── README.md       // here
+├── src
+│   ├── api         // Api adapter interfaces
+│   │   └── resas   // RESAS api adapters
+│   ├── components  // Shared react components
+│   ├── models      // DTO for api data
+│   ├── pages       // Pages
+│   ├── stories     // Storybook
+│   └── styles      // For CSS Module
+└── test            // Place test codes
+```
+
+## 2.4. コーディング規約
+
+- import は絶対パスを推奨
+
+# 3. ドキュメント
+
+## 3.1. [TODO]
