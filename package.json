@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint './**/*.{ts,tsx}'",
-    "test": "echo 'setup storybook'"
+    "test": "jest",
+    "test:update": "jest -u"
   },
   "dependencies": {
     "axios": "^0.26.1",
