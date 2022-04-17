@@ -1,0 +1,16 @@
+$breakpoints: (
+  // Smartphone
+  sm: "screen and (max-width: 600px)",
+
+  // Tablet
+  md: "screen and (max-width: 1024px)",
+
+  // PC
+  lg: "screen and (min-width: 1025px)"
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoints, $bp)} {
+    @content;
+  }
+}
