@@ -1,0 +1,19 @@
+@use "styles/utils/colors.scss";
+@use "styles/utils/fonts.scss";
+
+.h1 {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.text {
+  color: colors.$cherry;
+  font-size: 2.5rem;
+  font-family: fonts.$kosugi;
+  margin: 0;
+}
+
+.underline {
+  width: 100%;
+  border-top: 2px solid colors.$stone;
+}
