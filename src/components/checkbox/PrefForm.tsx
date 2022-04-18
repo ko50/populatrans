@@ -1,5 +1,6 @@
 import { CheckboxForm } from "components/checkbox/Form";
 import { Prefecture } from "models/prefecture";
+import styles from "styles/components/prefForm.module.scss";
 
 type Props = {
   prefList: Prefecture[];
@@ -8,7 +9,7 @@ type Props = {
 
 export const PrefForm: React.FC<Props> = ({ prefList, onSelect }) => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       {prefList.map((p) => {
         return (
           <CheckboxForm
