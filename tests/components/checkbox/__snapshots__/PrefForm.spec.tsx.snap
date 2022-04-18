@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`prefecture form component should render correctly 1`] = `
+<div
+  className="wrapper"
+/>
+`;
+
+exports[`prefecture form component should render correctly with data 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="form"
+  >
+    <input
+      className="checkbox"
+      id="1"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="1"
+    >
+      茨城県
+    </label>
+  </div>
+  <div
+    className="form"
+  >
+    <input
+      className="checkbox"
+      id="2"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="2"
+    >
+      埼玉県
+    </label>
+  </div>
+</div>
+`;
