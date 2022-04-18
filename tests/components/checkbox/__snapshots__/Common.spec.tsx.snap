@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common checkbox component should render correctly 1`] = `
+<input
+  className="checkbox"
+  type="checkbox"
+/>
+`;
+
+exports[`common checkbox component should render correctly with props 1`] = `
+<input
+  className="checkbox"
+  id="test"
+  type="checkbox"
+  value={1}
+/>
+`;

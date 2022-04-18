@@ -1,0 +1,14 @@
+@use "styles/utils/colors.scss";
+@use "styles/utils/fonts.scss";
+
+.form {
+  display: flex;
+  align-items: center;
+  color: colors.$carbon;
+  font-family: fonts.$kosugi;
+  cursor: pointer;
+
+  label {
+    margin-left: 0.5rem;
+  }
+}
