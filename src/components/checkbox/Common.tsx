@@ -1,4 +1,4 @@
-import styles from "styles/components/checkbox.module.scss";
+import styles from "styles/components/checkbox/common.module.scss";
 
 export const Checkbox: React.FC<
   React.InputHTMLAttributes<HTMLInputElement>
