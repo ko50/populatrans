@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common home page should render correctly 1`] = `
+<div>
+  <main
+    className="main"
+  >
+    <div
+      className="header"
+    >
+      Header
+    </div>
+    <div
+      className="wrapper"
+    >
+      <div
+        className="graph"
+      >
+        <div
+          className="h1"
+        >
+          <h1
+            className="text"
+          >
+            人口の推移
+          </h1>
+          <div
+            className="underline"
+          />
+        </div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="population"
+          >
+            人口数
+          </div>
+          <div
+            className="year"
+          >
+            年度
+          </div>
+          <div
+            className="graph"
+          >
+            <canvas
+              height={150}
+              role="img"
+              width={300}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="prefForm"
+      >
+        <div
+          className="h1"
+        >
+          <h1
+            className="text"
+          >
+            都道府県
+          </h1>
+          <div
+            className="underline"
+          />
+        </div>
+        <div
+          className="wrapper"
+        />
+      </div>
+    </div>
+  </main>
+</div>
+`;

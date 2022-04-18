@@ -1,10 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Home from "pages/index";
+import Index from "pages/index";
 
 describe("common home page", () => {
   it("should render correctly", () => {
-    const tree = renderer.create(<Home />).toJSON();
+    const tree = renderer.create(<Index />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
