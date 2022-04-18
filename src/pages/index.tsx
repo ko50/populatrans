@@ -15,7 +15,7 @@ const Index: NextPage = () => {
           name="description"
           content="Display population transition in selected prefectures"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <main className={styles.main}>
