@@ -8,7 +8,7 @@ exports[`common home page should render correctly 1`] = `
     <div
       className="header"
     >
-      Header
+      POPULATrans
     </div>
     <div
       className="wrapper"
