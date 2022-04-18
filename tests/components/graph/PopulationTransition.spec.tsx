@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { PopulationTransitionGraph } from "components/graph/PopulationTransitionGraph";
+import { PopulationTransitionGraph } from "components/graph/PopulationTransition";
 
 describe("population transition graph component", () => {
   it("should render correctly", () => {
