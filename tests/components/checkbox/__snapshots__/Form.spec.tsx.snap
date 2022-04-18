@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checkbox form component should render correctly 1`] = `
+<div
+  className="form"
+>
+  <input
+    className="checkbox"
+    type="checkbox"
+  />
+  <label>
+    test
+  </label>
+</div>
+`;
+
+exports[`checkbox form component should render correctly with props 1`] = `
+<div
+  className="form"
+>
+  <input
+    className="checkbox"
+    id="test"
+    type="checkbox"
+    value={1}
+  />
+  <label
+    htmlFor="test"
+  >
+    test
+  </label>
+</div>
+`;
