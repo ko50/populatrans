@@ -1,9 +1,7 @@
+import styles from "styles/components/checkbox.module.scss";
+
 export const Checkbox: React.FC<
   React.InputHTMLAttributes<HTMLInputElement>
 > = ({ ...props }) => {
-  return (
-    <div>
-      <input className="" {...props} />
-    </div>
-  );
+  return <input className={styles.checkbox} type="checkbox" {...props} />;
 };
