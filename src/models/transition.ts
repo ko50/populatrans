@@ -1,6 +1,11 @@
 import { Population } from "models/population";
 
 export type Transition = {
-    boundaryYear: number;
+    pref: string;
     populations: Population[];
+};
+
+export type TransitionList = {
+    boundaryYear: number;
+    transitions: Transition[];
 };
