@@ -38,6 +38,7 @@
   &:checked {
     &::before {
       background-color: colors.$sakura;
+      border: 0;
     }
 
     &::after {
