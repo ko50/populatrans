@@ -1,6 +1,6 @@
 import { Transition } from "models/transition";
 
-export async function getMockedPopulationComposition(): Promise<Transition[]> {
+export async function getMockedPopulationTransition(): Promise<Transition[]> {
     const prefList: Transition[] = [
         {
             boundaryYear: 2020,
