@@ -28,8 +28,28 @@ exports[`common home page should render correctly 1`] = `
             className="underline"
           />
         </div>
-        <div>
-          Loading
+        <div
+          className="wrapper"
+        >
+          <div
+            className="population"
+          >
+            人口数
+          </div>
+          <div
+            className="year"
+          >
+            年度
+          </div>
+          <div
+            className="graph"
+          >
+            <canvas
+              height={150}
+              role="img"
+              width={300}
+            />
+          </div>
         </div>
       </div>
       <div
