@@ -9,11 +9,11 @@ type _PopulationTransitionAPIType = (
 ) => Promise<TransitionList>;
 
 export type API = {
-    prefListAPI: _PrefListAPIType;
-    populationTransitionAPI: _PopulationTransitionAPIType;
+    getPrefList: _PrefListAPIType;
+    getPopulationTransition: _PopulationTransitionAPIType;
 };
 
-export async function setUpAPI(): Promise<API> {
+export function setUpAPI(): API {
     const apiConfig = process.env.API_CONFIG ?? "mock";
     let prefListAPI: _PrefListAPIType;
     let populationTransitionAPI: _PopulationTransitionAPIType;
@@ -34,7 +34,9 @@ export async function setUpAPI(): Promise<API> {
     }
 
     return {
-        prefListAPI: prefListAPI,
-        populationTransitionAPI: populationTransitionAPI,
+        getPrefList: prefListAPI,
+        getPopulationTransition: populationTransitionAPI,
     };
 }
+
+export const api = setUpAPI();
