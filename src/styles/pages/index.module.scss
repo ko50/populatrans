@@ -9,16 +9,21 @@
 .wrapper {
   display: flex;
   flex-direction: row;
-  padding: 1rem;
+  padding: 2rem;
+  gap: 2rem;
 
   @include mq.mq("md") {
     flex-direction: column-reverse;
+  }
+
+  @include mq.mq("sm") {
+    padding: 1rem;
+    gap: 1rem;
   }
 }
 
 .graph {
   width: 60%;
-  padding: 1rem;
 
   @include mq.mq("md") {
     width: 100%;
@@ -27,7 +32,6 @@
 
 .prefForm {
   width: 40%;
-  padding: 1rem;
 
   @include mq.mq("md") {
     width: 100%;
