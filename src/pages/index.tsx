@@ -48,7 +48,7 @@ const Index: NextPage<Props> = ({ prefList }) => {
             <H1 text="都道府県" />
             <PrefForm
               prefList={prefList}
-              onSelect={async () => {
+              onSelect={async (prefList) => {
                 const t = await api.getPopulationTransition(prefList);
                 setTransitionList(t);
               }}
