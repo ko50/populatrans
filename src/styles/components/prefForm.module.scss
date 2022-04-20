@@ -7,5 +7,6 @@
 
   @include mq.mq("sm") {
     grid-template-columns: repeat(3, 1fr);
+    font-size: 0.8rem;
   }
 }
