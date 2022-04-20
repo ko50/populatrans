@@ -24,7 +24,10 @@ const Index: NextPage = () => {
           <div className={styles.graph}>
             <H1 text="人口の推移" />
             <PopulationTransitionGraph
-              transition={{ boundaryYear: 2020, transitions: [] }}
+              transitionList={{
+                boundaryYear: 2020,
+                transitions: [],
+              }}
             />
           </div>
           <div className={styles.prefForm}>
