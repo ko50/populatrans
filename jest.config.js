@@ -6,6 +6,7 @@ const createJestConfig = nextJest({
 
 const customJestConfig = {
   moduleNameMapper: {
+    "api(.*)$": "<rootDir>/src/api/$1",
     "components(.*)$": "<rootDir>/src/components/$1",
     "pages(.*)$": "<rootDir>/src/pages/$1",
   },

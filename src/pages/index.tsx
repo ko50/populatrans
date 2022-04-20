@@ -1,12 +1,37 @@
+import { API, setUpAPI } from "api/setup";
 import { PrefForm } from "components/checkbox/PrefForm";
 import { PopulationTransitionGraph } from "components/graph/PopulationTransition";
 import { Header } from "components/header/Common";
 import { H1 } from "components/heading/H1";
-import type { NextPage } from "next";
+import { Prefecture } from "models/prefecture";
+import { TransitionList } from "models/transition";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 import styles from "styles/pages/index.module.scss";
 
-const Index: NextPage = () => {
+type Props = {
+  prefList: Prefecture[];
+  api: API;
+};
+
+export const getServerSideProps: GetServerSideProps<Props> = async (
+  context
+) => {
+  const api = await setUpAPI();
+
+  const prefList = await api.prefListAPI();
+  const props: Props = {
+    prefList: prefList,
+    api: api,
+  };
+
+  return { props };
+};
+
+const Index: NextPage<Props> = ({ prefList, api }) => {
+  const [transitionList, setTransitionList] = useState<TransitionList>();
+
   return (
     <div>
       <Head>
@@ -23,16 +48,17 @@ const Index: NextPage = () => {
         <div className={styles.wrapper}>
           <div className={styles.graph}>
             <H1 text="人口の推移" />
-            <PopulationTransitionGraph
-              transitionList={{
-                boundaryYear: 2020,
-                transitions: [],
-              }}
-            />
+            <PopulationTransitionGraph transitionList={transitionList} />
           </div>
           <div className={styles.prefForm}>
             <H1 text="都道府県" />
-            <PrefForm prefList={[]} onSelect={() => {}} />
+            <PrefForm
+              prefList={prefList}
+              onSelect={async () => {
+                const t = await api.populationTransitionAPI(prefList);
+                setTransitionList(t);
+              }}
+            />
           </div>
         </div>
       </main>
