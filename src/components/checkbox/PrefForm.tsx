@@ -1,7 +1,7 @@
 import { CheckboxForm } from "components/checkbox/Form";
 import { Prefecture } from "models/prefecture";
 import { useState } from "react";
-import styles from "styles/components/prefForm.module.scss";
+import styles from "styles/components/checkbox/pref_form.module.scss";
 
 type Props = {
   prefList: Prefecture[];

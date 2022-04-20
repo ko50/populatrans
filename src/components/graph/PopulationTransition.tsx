@@ -11,7 +11,7 @@ import {
 import { Line } from "react-chartjs-2";
 
 import { TransitionList } from "models/transition";
-import styles from "styles/components/graph.module.scss";
+import styles from "styles/components/graph/population_transition.module.scss";
 
 type Props = {
   transitionList?: TransitionList;
