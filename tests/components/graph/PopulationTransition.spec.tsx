@@ -7,7 +7,7 @@ describe("population transition graph component", () => {
     const tree = renderer
       .create(
         <PopulationTransitionGraph
-          transition={{ boundaryYear: 2021, transitions: [] }}
+          transitionList={{ boundaryYear: 2021, transitions: [] }}
         />
       )
       .toJSON();
@@ -18,7 +18,7 @@ describe("population transition graph component", () => {
     const tree = renderer
       .create(
         <PopulationTransitionGraph
-          transition={{
+          transitionList={{
             boundaryYear: 2021,
             transitions: [
               {
