@@ -14,10 +14,15 @@ import { TransitionList } from "models/transition";
 import styles from "styles/components/graph.module.scss";
 
 type Props = {
-  transition: TransitionList;
+  transitionList?: TransitionList;
 };
 
-export const PopulationTransitionGraph: React.FC<Props> = ({ transition }) => {
+export const PopulationTransitionGraph: React.FC<Props> = ({
+  transitionList: transition,
+}) => {
+  if (transition === undefined)
+    return <div className={styles.wrapper}>Loading</div>;
+
   ChartJS.register(
     CategoryScale,
     LinearScale,
