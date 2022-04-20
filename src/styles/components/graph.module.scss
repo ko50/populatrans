@@ -1,3 +1,4 @@
+@use "styles/utils/mq.scss";
 @use "styles/utils/colors.scss";
 
 .wrapper {
@@ -11,14 +12,35 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
+
+  @include mq.mq("sm") {
+    font-size: 0.8rem;
+  }
 }
 
 .year {
   position: absolute;
   right: 3rem;
   bottom: 1.5rem;
+
+  @include mq.mq("md") {
+    right: 5.5rem;
+    bottom: 3rem;
+  }
+
+  @include mq.mq("sm") {
+    right: 2rem;
+    bottom: 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 .graph {
   padding: 2rem;
+
+  @include mq.mq("sm") {
+    padding: 0 {
+      top: 1.5rem;
+    }
+  }
 }
