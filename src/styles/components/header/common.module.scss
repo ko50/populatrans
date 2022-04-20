@@ -1,3 +1,4 @@
+@use "styles/utils/mq.scss";
 @use "styles/utils/colors.scss";
 @use "styles/utils/fonts.scss";
 
@@ -11,4 +12,9 @@
   font-family: fonts.$zcool;
   color: white;
   background-color: colors.$sakura;
+
+  @include mq.mq("md") {
+    height: 4rem;
+    font-size: 2.5rem;
+  }
 }

@@ -1,3 +1,4 @@
+@use "styles/utils/mq.scss";
 @use "styles/utils/colors.scss";
 @use "styles/utils/fonts.scss";
 
@@ -8,9 +9,13 @@
 
 .text {
   color: colors.$cherry;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: fonts.$kosugi;
   margin: 0;
+
+  @include mq.mq("md") {
+    font-size: 1.5rem;
+  }
 }
 
 .underline {
