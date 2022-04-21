@@ -1,6 +1,7 @@
 import { getMockedPrefectureList } from "api/mock/prefList";
 import { getMockedPopulationTransition } from "api/mock/transition";
 import { getResasPrefectureList } from "api/resas/prefList";
+import { getResasPopulationTransition } from "api/resas/transition";
 import { Prefecture } from "models/prefecture";
 import { TransitionList } from "models/transition";
 
@@ -28,7 +29,7 @@ export function setUpAPI(): API {
         case "resas":
             api = {
                 getPrefList: getResasPrefectureList,
-                getPopulationTransition: getMockedPopulationTransition,
+                getPopulationTransition: getResasPopulationTransition,
             };
             break;
 
