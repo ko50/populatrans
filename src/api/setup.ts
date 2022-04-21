@@ -32,7 +32,8 @@ export function setUpAPI(): API {
 
             api = {
                 getPrefList: () => getResasPrefectureList(resasClient),
-                getPopulationTransition: getMockedPopulationTransition,
+                getPopulationTransition: (selected: Prefecture[]) =>
+                    getResasPopulationTransition(resasClient, selected),
             };
             break;
 
