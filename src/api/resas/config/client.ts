@@ -15,5 +15,3 @@ export function initializeResasClient(): AxiosInstance {
 
     return axios.create(config);
 }
-
-export const resasClient = initializeResasClient();
