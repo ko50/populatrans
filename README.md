@@ -21,9 +21,9 @@ pnpm install
 
 ### 環境変数
 
-- **`API_CONFIG`: `"mock" | "resas"`**
+- **`NEXT_PUBLIC_API_CONFIG`: `"mock" | "resas"`**
   - 使用する API を選択する
-- **`RESAS_API_KEY`: `string`**
+- **`NEXT_PUBLIC_API_KEY`: `string`**
   - RESAS API を使用する際の API キー
 
 ## 1.3. **サーバー起動**
