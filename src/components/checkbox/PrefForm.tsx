@@ -9,8 +9,7 @@ type Props = {
 };
 
 export const PrefForm: React.FC<Props> = ({ prefList, onSelect }) => {
-  const [selectedPrefList, setSelectedPrefList] =
-    useState<Prefecture[]>(prefList);
+  const [selectedPrefList, setSelectedPrefList] = useState<Prefecture[]>([]);
 
   return (
     <div className={styles.wrapper}>
@@ -20,13 +19,13 @@ export const PrefForm: React.FC<Props> = ({ prefList, onSelect }) => {
             key={p.code}
             label={p.name}
             id={p.code.toString()}
-            onChange={() => {
-              selectedPrefList.includes(p)
+            onChange={async () => {
+              const updated = selectedPrefList.includes(p)
                 ? selectedPrefList.filter((e) => e.code !== p.code)
-                : selectedPrefList.push(p);
+                : [...selectedPrefList, p];
 
-              setSelectedPrefList(selectedPrefList);
-              onSelect(prefList);
+              setSelectedPrefList(updated);
+              await onSelect(updated);
             }}
           />
         );
