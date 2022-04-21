@@ -1,7 +1,8 @@
 import { getMockedPrefectureList } from "api/mock/prefList";
 import { getMockedPopulationTransition } from "api/mock/transition";
-import { initializeResasClient } from "api/resas/config/client";
 import { getResasPrefectureList } from "api/resas/prefList";
+import { getResasPopulationTransition } from "api/resas/transition";
+import { initializeResasClient } from "api/resas/config/client";
 import { Prefecture } from "models/prefecture";
 import { TransitionList } from "models/transition";
 
@@ -31,7 +32,8 @@ export function setUpAPI(): API {
 
             api = {
                 getPrefList: () => getResasPrefectureList(resasClient),
-                getPopulationTransition: getMockedPopulationTransition,
+                getPopulationTransition: (selected: Prefecture[]) =>
+                    getResasPopulationTransition(resasClient, selected),
             };
             break;
 
