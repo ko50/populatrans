@@ -1,5 +1,6 @@
 import { getMockedPrefectureList } from "api/mock/prefList";
 import { getMockedPopulationTransition } from "api/mock/transition";
+import { getResasPrefectureList } from "api/resas/prefList";
 import { Prefecture } from "models/prefecture";
 import { TransitionList } from "models/transition";
 
@@ -14,29 +15,28 @@ export type API = {
 };
 
 export function setUpAPI(): API {
-    const apiConfig = process.env.API_CONFIG ?? "mock";
-    let prefListAPI: _PrefListAPIType;
-    let populationTransitionAPI: _PopulationTransitionAPIType;
+    const apiConfig = process.env.NEXT_PUBLIC_API_CONFIG ?? "mock";
 
+    let api: API;
     switch (apiConfig) {
         case "mock":
-            prefListAPI = getMockedPrefectureList;
-            populationTransitionAPI = getMockedPopulationTransition;
+            api = {
+                getPrefList: getMockedPrefectureList,
+                getPopulationTransition: getMockedPopulationTransition,
+            };
             break;
         case "resas":
-            // TODO: implement adapters for RESAS api
-            prefListAPI = getMockedPrefectureList;
-            populationTransitionAPI = getMockedPopulationTransition;
+            api = {
+                getPrefList: getResasPrefectureList,
+                getPopulationTransition: getMockedPopulationTransition,
+            };
             break;
 
         default:
-            throw new Error("Set API_CONFIG 'mock' or 'resas'");
+            throw new Error("Set 'NEXT_PUBLIC_API_CONFIG' 'mock' or 'resas'");
     }
 
-    return {
-        getPrefList: prefListAPI,
-        getPopulationTransition: populationTransitionAPI,
-    };
+    return api;
 }
 
 export const api = setUpAPI();
