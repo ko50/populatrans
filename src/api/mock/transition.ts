@@ -8,7 +8,7 @@ export async function getMockedPopulationTransition(
         boundaryYear: 2020,
         transitions: [
             {
-                pref: "茨城県",
+                pref: { code: 1, name: "茨城県" },
                 populations: [
                     {
                         year: 2018,
@@ -29,7 +29,7 @@ export async function getMockedPopulationTransition(
                 ],
             },
             {
-                pref: "東京都",
+                pref: { code: 2, name: "東京都" },
                 populations: [
                     {
                         year: 2018,

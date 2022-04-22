@@ -33,7 +33,7 @@ export async function getResasPopulationTransition(
 
             const result = _res.data.result;
             const datum: Transition = {
-                pref: p.name,
+                pref: p,
                 populations: result.data[0].data,
             };
 
