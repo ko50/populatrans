@@ -22,7 +22,6 @@ type Props = {
 export const PopulationTransitionGraph: React.FC<Props> = ({
   transitionList,
 }) => {
-  console.log(transitionList?.transitions.length);
   if (transitionList === undefined || transitionList.transitions.length === 0)
     return (
       <div className={styles.navigation}>
