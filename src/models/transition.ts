@@ -1,7 +1,8 @@
 import { Population } from "models/population";
+import { Prefecture } from "models/prefecture";
 
 export type Transition = {
-    pref: string;
+    pref: Prefecture;
     populations: Population[];
 };
 
