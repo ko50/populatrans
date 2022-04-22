@@ -22,7 +22,10 @@ describe("population transition graph component", () => {
             boundaryYear: 2021,
             transitions: [
               {
-                pref: "茨城県",
+                pref: {
+                  code: 1,
+                  name: "茨城県",
+                },
                 populations: [
                   {
                     year: 2014,
