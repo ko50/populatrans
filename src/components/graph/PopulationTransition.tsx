@@ -13,6 +13,10 @@ import { Line } from "react-chartjs-2";
 import { TransitionList } from "models/transition";
 import styles from "styles/components/graph/population_transition.module.scss";
 import { filterGraphLabel } from "controllers/populationTransitionGraph/filterGraphLabel";
+import {
+  computeGraphDotColor,
+  computeGraphLineColor,
+} from "controllers/populationTransitionGraph/computeGraphColor";
 
 type Props = {
   transitionList?: TransitionList;
@@ -55,8 +59,8 @@ export const PopulationTransitionGraph: React.FC<Props> = ({
         data: t.populations
           .filter((p) => labels.includes(p.year))
           .map((p) => p.value),
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: computeGraphLineColor(t.pref),
+        backgroundColor: computeGraphDotColor(t.pref),
       };
     }),
   };
