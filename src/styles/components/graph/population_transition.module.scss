@@ -37,6 +37,8 @@
 
 .graph {
   padding: 2rem;
+  min-height: 30rem;
+  width: 100%;
 
   @include mq.mq("sm") {
     padding: 0 {
