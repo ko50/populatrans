@@ -8,6 +8,8 @@ export function filterGraphLabel(transitionList: TransitionList) {
 
     _labels.forEach((years) => {
         years.forEach((y) => {
+            if (y > transitionList.boundaryYear) return;
+
             // 他の Transition の人口構成にも共通する年だけ考慮する
             const consistent = _labels.every((years2) => years2.includes(y));
 
