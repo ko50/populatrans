@@ -70,6 +70,9 @@ export const PopulationTransitionGraph: React.FC<Props> = ({
       <div className={styles.graph}>
         <Line options={options} data={data}></Line>
       </div>
+      <div className={styles.copyright}>
+        RESAS (地域経済分析システム) を加工して作成
+      </div>
     </div>
   );
 };
