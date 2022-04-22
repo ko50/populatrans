@@ -22,8 +22,13 @@ type Props = {
 export const PopulationTransitionGraph: React.FC<Props> = ({
   transitionList,
 }) => {
-  if (transitionList === undefined)
-    return <div className={styles.wrapper}>Loading</div>;
+  console.log(transitionList?.transitions.length);
+  if (transitionList === undefined || transitionList.transitions.length === 0)
+    return (
+      <div className={styles.navigation}>
+        表示するデータがありません。都道府県を選択してください
+      </div>
+    );
 
   ChartJS.register(
     CategoryScale,
@@ -40,11 +45,19 @@ export const PopulationTransitionGraph: React.FC<Props> = ({
     plugins: {
       legend: {
         position: "right" as const,
+        labels: {
+          usePointStyle: true,
+          pointStyle: "line",
+        },
       },
       title: {
         display: false,
       },
     },
+    scales: {
+      y: { beginAtZero: true },
+    },
+    maintainAspectRatio: false,
   };
 
   const labels = filterGraphLabel(transitionList);

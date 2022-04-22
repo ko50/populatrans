@@ -29,9 +29,9 @@ exports[`common home page should render correctly 1`] = `
           />
         </div>
         <div
-          className="wrapper"
+          className="navigation"
         >
-          Loading
+          表示するデータがありません。都道府県を選択してください
         </div>
       </div>
       <div
