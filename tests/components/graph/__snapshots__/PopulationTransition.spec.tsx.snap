@@ -2,27 +2,9 @@
 
 exports[`population transition graph component should render correctly 1`] = `
 <div
-  className="wrapper"
+  className="navigation"
 >
-  <div
-    className="population"
-  >
-    人口数
-  </div>
-  <div
-    className="year"
-  >
-    年度
-  </div>
-  <div
-    className="graph"
-  >
-    <canvas
-      height={150}
-      role="img"
-      width={300}
-    />
-  </div>
+  表示するデータがありません。都道府県を選択してください
 </div>
 `;
 
