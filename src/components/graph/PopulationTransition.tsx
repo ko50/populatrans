@@ -18,9 +18,9 @@ type Props = {
 };
 
 export const PopulationTransitionGraph: React.FC<Props> = ({
-  transitionList: transition,
+  transitionList,
 }) => {
-  if (transition === undefined)
+  if (transitionList === undefined)
     return <div className={styles.wrapper}>Loading</div>;
 
   ChartJS.register(
@@ -46,7 +46,7 @@ export const PopulationTransitionGraph: React.FC<Props> = ({
   };
 
   const labelSet: Set<number> = new Set();
-  const _labels = transition.transitions.map((t) =>
+  const _labels = transitionList.transitions.map((t) =>
     t.populations.map((p) => p.year)
   );
   _labels.forEach((array) => {
@@ -59,9 +59,9 @@ export const PopulationTransitionGraph: React.FC<Props> = ({
 
   const data = {
     labels,
-    datasets: transition.transitions.map((t) => {
+    datasets: transitionList.transitions.map((t) => {
       return {
-        label: t.pref,
+        label: t.pref.name,
         data: t.populations
           .filter((p) => labels.includes(p.year))
           .map((p) => p.value),
