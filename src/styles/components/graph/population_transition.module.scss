@@ -1,5 +1,6 @@
 @use "styles/utils/mq.scss";
 @use "styles/utils/colors.scss";
+@use "styles/utils/fonts.scss";
 
 .wrapper {
   height: 33rem;
@@ -7,6 +8,16 @@
   position: relative;
   padding: 1rem;
   background-color: colors.$spring;
+}
+
+.navigation {
+  @extend .wrapper;
+
+  font-family: fonts.$kosugi;
+  color: colors.$carbon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .population {
