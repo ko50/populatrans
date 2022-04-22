@@ -31,5 +31,10 @@ exports[`population transition graph component should render correctly with actu
       width={300}
     />
   </div>
+  <div
+    className="copyright"
+  >
+    RESAS (地域経済分析システム) を加工して作成
+  </div>
 </div>
 `;
