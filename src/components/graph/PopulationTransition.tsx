@@ -40,6 +40,10 @@ export const PopulationTransitionGraph: React.FC<Props> = ({
     plugins: {
       legend: {
         position: "right" as const,
+        labels: {
+          usePointStyle: true,
+          pointStyle: "line",
+        },
       },
       title: {
         display: false,
