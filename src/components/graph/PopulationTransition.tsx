@@ -13,10 +13,7 @@ import { Line } from "react-chartjs-2";
 import { TransitionList } from "models/transition";
 import styles from "styles/components/graph/population_transition.module.scss";
 import { filterGraphLabel } from "controllers/populationTransitionGraph/filterGraphLabel";
-import {
-  computeGraphDotColor,
-  computeGraphLineColor,
-} from "controllers/populationTransitionGraph/computeGraphColor";
+import { conversionPopulationTransition } from "controllers/populationTransitionGraph/conversionGraphData";
 
 type Props = {
   transitionList?: TransitionList;
@@ -51,19 +48,7 @@ export const PopulationTransitionGraph: React.FC<Props> = ({
   };
 
   const labels = filterGraphLabel(transitionList);
-  const data = {
-    labels,
-    datasets: transitionList.transitions.map((t) => {
-      return {
-        label: t.pref.name,
-        data: t.populations
-          .filter((p) => labels.includes(p.year))
-          .map((p) => p.value),
-        borderColor: computeGraphLineColor(t.pref),
-        backgroundColor: computeGraphDotColor(t.pref),
-      };
-    }),
-  };
+  const data = conversionPopulationTransition(labels, transitionList);
 
   return (
     <div className={styles.wrapper}>
