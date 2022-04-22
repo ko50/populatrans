@@ -12,6 +12,7 @@ import { Line } from "react-chartjs-2";
 
 import { TransitionList } from "models/transition";
 import styles from "styles/components/graph/population_transition.module.scss";
+import { filterGraphLabel } from "controllers/populationTransitionGraph/filterGraphLabel";
 
 type Props = {
   transitionList?: TransitionList;
@@ -45,18 +46,7 @@ export const PopulationTransitionGraph: React.FC<Props> = ({
     },
   };
 
-  const labelSet: Set<number> = new Set();
-  const _labels = transitionList.transitions.map((t) =>
-    t.populations.map((p) => p.year)
-  );
-  _labels.forEach((array) => {
-    array.forEach((label) => {
-      const consistent = _labels.every((array2) => array2.includes(label));
-      if (consistent) labelSet.add(label);
-    });
-  });
-  const labels = Array.from(labelSet.values()).sort();
-
+  const labels = filterGraphLabel(transitionList);
   const data = {
     labels,
     datasets: transitionList.transitions.map((t) => {
