@@ -45,6 +45,10 @@ export const PopulationTransitionGraph: React.FC<Props> = ({
         display: false,
       },
     },
+    scales: {
+      y: { beginAtZero: true },
+    },
+    maintainAspectRatio: false,
   };
 
   const labels = filterGraphLabel(transitionList);
